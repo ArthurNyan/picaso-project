@@ -1,6 +1,9 @@
+import ItemPage from '../ItemPage/ItemPage'
+import './HomePage'
+
 const HomePage = () => {
     return <>
-        "Home page"
+        <ItemPage />
     </>
 }
 
