@@ -1,40 +1,50 @@
-import { useEffect, useState } from 'react'
-import './cardsModule.scss'
 import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { update } from '../../app/stateSlice';
+import { RootState } from '../../app/store';
+import { IPost } from '../../shared/lib/Post';
+import { Link } from 'react-router-dom';
 
-interface Post {
-    title: string;
-    body: string;
-    id: number;
-}
+import './cardsModule.scss'
 
 const ItemPage = () => {
+    const posts = useSelector((state: RootState) => state.posts.value)
+    const dispatch = useDispatch()
 
-    const [posts, updatePosts] = useState([])
+    const [curP, upCur] = useState(1)
+    const [pafeAct, upPageAct] = useState(false)
 
     useEffect(() => {
-        axios.get(import.meta.env.VITE_BACKEND_URL)
+        axios.get(import.meta.env.VITE_BACKEND_URL + `?_limit=10&_page=${curP}`)
             .then((response) => {
-                updatePosts(response.data)
+                dispatch(update(response.data))
+                upCur(curP + 1);
+            }).finally(() => {
+                upPageAct(false);
             })
-    }, [])
+    }, [pafeAct])
 
     useEffect(() => {
         document.addEventListener('scroll', scrollHandler)
         return () => {
-            document.removeEventListener('scroll', scrollHandler)
+            document.removeEventListener('scroll', scrollHandler);
         }
     }, [])
 
-    const scrollHandler = () => {
-        console.log('scroll')
+    const scrollHandler = (event) => {
+        (event.target.documentElement.scrollHeight - event.target.documentElement.scrollTop - window.innerHeight) < 100 && upPageAct(true);
     }
+
     return <>
         <div>
-            {posts.map((post : Post) =>
-                <div className='post'>
+            {posts.map((post: IPost) =>
+                <div className='post' key={post.id}>
                     <div className="title">{post.id}. Title: {post.title}</div>
-                    <div className="body">Body: {post.body}</div>
+                    <div className="body">Body: {post.body.length > 20 ? post.body.substring(0, 20) + '...' : post.body}</div>
+                    <div className='link__cont'>
+                        <Link to={`${post.id}`} className='link'>Просмотр</Link>
+                    </div>
                 </div>
             )}
         </div>

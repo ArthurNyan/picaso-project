@@ -1,5 +1,5 @@
 import './App.scss'
-import { RouterProvider } from './Provider/Provider';
+import { RouterProvider } from './app/Provider/Provider';
 
 const App = () => {
   return <>

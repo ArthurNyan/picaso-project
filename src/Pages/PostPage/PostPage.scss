@@ -1,0 +1,30 @@
+.card {
+  position: absolute;
+  max-width: 900px;
+  max-height: 900px;
+  border: 2px solid #432818;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px ;
+  background-color: #432818;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .title {
+    font-size: 32px;
+    margin: 10px;
+  }
+  .body {
+    font-size: 26px;
+    border: 2px solid #bb9457;
+    border-radius: 10px;
+    background-color: #bb9457;
+    padding: 8px;
+    margin: 10px;
+  }
+  .back {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

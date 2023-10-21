@@ -1,4 +1,4 @@
-import ItemPage from '../../Widgets/cardsModule/cardsModule'
+import ItemPage from '../../Widgets/cardsModule/CardsModule'
 import './HomePage'
 
 const HomePage = () => {

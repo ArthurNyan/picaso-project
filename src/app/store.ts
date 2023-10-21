@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import pageStateReducer from './stateSlice'
+import postsStateReducer from './stateSlice'
 
 export const store = configureStore({
   reducer: {
-    pageState: pageStateReducer,
+    posts: postsStateReducer,
   },
 })
 
