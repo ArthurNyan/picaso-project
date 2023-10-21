@@ -1,19 +1,18 @@
+import { IPost } from './../shared/lib/Post';
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  value: '',
-}
-
-export const pageState = createSlice({
-  name: 'PageState',
-  initialState,
-  reducers: {
-    update: (state, action) => {
-      state.value = action.payload
+export const postsState = createSlice({
+    name: 'postsState',
+    initialState: {
+        value: <IPost[]>[]
     },
-  },
+    reducers: {
+        update: (state, action) => {
+            state.value = [...state.value, ...action.payload]
+        },
+    },
 })
 
-export const { update } = pageState.actions
+export const { update } = postsState.actions
 
-export default pageState.reducer
+export default postsState.reducer

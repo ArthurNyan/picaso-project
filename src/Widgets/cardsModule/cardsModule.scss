@@ -1,0 +1,29 @@
+.post {
+  max-width: 600px;
+  max-height: 500px;
+  border: 2px solid #432818;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #432818;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  .body {
+    border: 2px solid #bb9457;
+    border-radius: 10px;
+    background-color: #bb9457;
+    padding: 8px;
+  }
+  .title {
+    font-size: 24px;
+    padding: 8px 0;
+  }
+  .link__cont {
+    margin-top: 10px;
+  }
+  .link {
+    font-size: 16px;
+    color: #fff;
+  }
+}
