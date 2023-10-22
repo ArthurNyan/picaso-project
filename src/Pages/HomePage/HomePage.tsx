@@ -1,5 +1,5 @@
 
-import ItemPage from '../../Widgets/CardsModule/CardsModule'
+import ItemPage from '../../Widgets/CardsModule/CardsModule.tsx'
 import './HomePage'
 
 const HomePage = () => {

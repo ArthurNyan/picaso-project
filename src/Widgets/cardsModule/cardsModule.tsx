@@ -32,7 +32,7 @@ const ItemPage = () => {
         }
     }, [])
 
-    const scrollHandler = (event) => {
+    const scrollHandler = (event:any) => {
         (event.target.documentElement.scrollHeight - event.target.documentElement.scrollTop - window.innerHeight) < 100 && upPageAct(true);
     }
 
