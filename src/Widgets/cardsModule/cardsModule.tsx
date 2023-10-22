@@ -15,7 +15,7 @@ const ItemPage = () => {
     const [pafeAct, upPageAct] = useState(false)
 
     useEffect(() => {
-        axios.get(import.meta.env.VITE_BACKEND_URL + `?_limit=10&_page=${curP}`)
+        axios.get("https://jsonplaceholder.typicode.com/posts" + `?_limit=10&_page=${curP}`)
             .then((response) => {
                 dispatch(update(response.data))
                 upCur(curP + 1);
