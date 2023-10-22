@@ -9,9 +9,8 @@ import { Link } from 'react-router-dom';
 import './cardsModule.scss'
 
 const ItemPage = () => {
-    const posts = useSelector((state: RootState) => state.posts.value)
+    const posts = useSelector((state: RootState) => state.postsState.value)
     const dispatch = useDispatch()
-
     const [curP, upCur] = useState(1)
     const [pafeAct, upPageAct] = useState(false)
 
@@ -32,7 +31,7 @@ const ItemPage = () => {
         }
     }, [])
 
-    const scrollHandler = (event:any) => {
+    const scrollHandler = (event : any ) => {
         (event.target.documentElement.scrollHeight - event.target.documentElement.scrollTop - window.innerHeight) < 100 && upPageAct(true);
     }
 

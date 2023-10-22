@@ -28,7 +28,7 @@
 	margin: auto;
 	border-radius: 50%;
 	box-sizing: border-box;
-	box-shadow: 0px 4px 4px 0px $dark-6 inset;
+	box-shadow: 0px 4px 4px 0px #121212 inset;
 	animation: rotation 5.4s linear infinite;
 
 	&::after {
@@ -45,17 +45,17 @@
 }
 
 .loaderDark {
-	background: linear-gradient(0deg, $dark-5 15%, $dark-2 60%, $main 100%);
+	background: linear-gradient(0deg, #121212 15%, #121212 60%, #121212 100%);
 
 	&::after {
-		background: $white;
+		background: #fff;
 	}
 }
 
-.loaderWhite {
-	background: linear-gradient(0deg, $white-5 15%, $white-2 60%, $white 100%);
+// .loaderWhite {
+// 	background: linear-gradient(0deg, $white-5 15%, $white-2 60%, $white 100%);
 
-	&::after {
-		background: $main;
-	}
-}
+// 	&::after {
+// 		background: $main;
+// 	}
+// }
